@@ -18,21 +18,16 @@ include __DIR__ . '/functions.php';
     <!--Script Bootstrap bundle-->
 </head>
 <body class="bg-muted ">
-  <header>
-    <div class="container pt-5">
+  <header class="mt-5">
+    <div class="container pt-3 shadow">
      <div class="row ">
-       <div class="col d-flex justify-content-center  p-2 text-dark">
+       <div class="col d-flex justify-content-center  p-2 text-dark shadow-lg p-3 mb-2 bg-body rounded">
          <div class="h1"> <em>Stong Password Generator</em> </div>
        </div>
      </div>
      <div class="row">
-       <div class="col d-flex justify-content-center text-secondary p-2">
+       <div class="col d-flex justify-content-center text-secondary p-2 shadow p-3 mb-2 bg-body rounded">
          <div class="h2">Genera password sicura</div>
-       </div>
-     </div>
-     <div class="row">
-       <div class="col d-flex bg-info justify-content-center shadow p-2">
-        <br>
        </div>
      </div>
    </div>
@@ -43,14 +38,15 @@ include __DIR__ . '/functions.php';
       <div class="row shadow">
         <div class="col-6 d-flex justify-content-start flex-column p-2 text-secondary bg-light  ">
           <div class="mb-5 pt-3 text-center">
-            <p> <em>consenti ripetizioni di uno o piú caratteri:</em> </p>
+            <p> <em>Enjoy</em> </p>
+            <img class="w-75" src="https://media.threatpost.com/wp-content/uploads/sites/103/2019/11/20084407/password.png" alt="">
           </div>
         </div>
         <!-- SECTION LEFT col-6 -->
 
         <div class="col-6 d-flex justify-content-start flex-column p-2 text-secondary bg-light  ">
           <form method="GET">
-            <label for="password-length"><h5 class="pt-2">Inserisci la lunghezza della password: </h5> </label>
+            <label for="password-length"><h5 class="pt-5">Inserisci la lunghezza della password: </h5> </label>
             <input class="btn btn-primary btn-lg "  type="number" type="password" name="password" id="password-length" required min="1" max="100">
             <div class="w-50 rounded" >
               <button class="btn btn-secondary mt-2" type="submit">Genera password</button>
