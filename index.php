@@ -2,9 +2,25 @@
   if(isset($_GET['password'])){
     $password = $_GET["password"];
     $length = strlen($password);
-    echo "<h4> $password </h4>";
-    echo "<p> $length </p> ";
+   
   }
+  var_dump($password);
+
+  function generateRandomPassword($length = 20) {
+    // Caratteri possibili per la password
+    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?~@#-_+<>[]{}!$%^&*()';
+
+    // Genera una stringa casuale con la lunghezza specificata
+    $password = '';
+    for ($i = 0; $i < $length; $i++) {
+        $password .= $chars[rand(0, strlen($chars) - 1)];
+    }
+
+    return $password;
+
+  }
+  $password = generateRandomPassword(20); // Genera una password casuale di 12 caratteri
+  echo $password; // Stampa la password casuale generata
 ?>
 
 <!DOCTYPE html>
@@ -51,10 +67,6 @@
             <p>Lunghezza password:</p>
             <p>consenti ripetizioni di uno o piú caratteri:</p>
           </div>
-          <div class=" mt-5 pt-5">
-            <button type="submit" class="btn btn-primary">Invia</button>
-            <button type="reset"class="btn btn-secondary">Annulla</button>
-          </div>
         </div>
         <!-- SECTION LEFT col-6 -->
 
@@ -62,15 +74,16 @@
         <form  method="GET" action="">
             <div class="mb-3">
               <label for="password"> </label>
-              <input type="text" name="password" id="password" class="form-control" placeholder="" >
+              <input type="text" name="password" id="password" class="form-control w-50 " placeholder="" >
             </div>
+            <button type="submit" class="btn btn-primary">Invia</button>
+            <button type="reset"class="btn btn-secondary">Annulla</button>
           <div>
         </form> 
           <!-- password -->
-
-          <div class="form-check">
+          <div class="form-check mt-2">
               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-              <label class="form-check-label" for="flexRadioDefault1">
+              <label class="form-check-label " for="flexRadioDefault1">
                 Si
               </label>
           </div>
@@ -82,7 +95,7 @@
             </div>
           </div>
           <!--radio-  -->
-          <div class="form-check mt-5">
+          <div class="form-check mt-2">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
               Lettere
