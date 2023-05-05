@@ -1,26 +1,5 @@
 <?php
-if (isset($_GET['password'])) {
-    $length = intval($_GET['password']);
-    if ($length < 1) {
-      $length = 20;
-    }
-  } else {
-    $length = 20;
-  }
-
-  $password = generateRandomPassword($length);
-
-  function generateRandomPassword($length) {
-    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?~@#-_+<>[]{}!$%^&*()';
-
-    // Genera una stringa casuale con la lunghezza specificata
-    $password = '';
-    for ($i = 0; $i < $length; $i++) {
-      $password .= $chars[rand(0, strlen($chars) - 1)];
-    }
-
-    return $password;
-  }
+  include __DIR__ . '/functions.php';
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +22,7 @@ if (isset($_GET['password'])) {
     <div class="container pt-5">
      <div class="row ">
        <div class="col d-flex justify-content-center  p-2 text-dark">
-         <div class="h1">Storn Password Generator</div>
+         <div class="h1">Stong Password Generator</div>
        </div>
      </div>
      <div class="row">
