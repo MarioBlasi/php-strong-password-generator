@@ -1,26 +1,26 @@
 <?php
-  if(isset($_GET['password'])){
-    $password = $_GET["password"];
-    $length = strlen($password);
-   
+if (isset($_GET['password'])) {
+    $length = intval($_GET['password']);
+    if ($length < 1) {
+      $length = 20;
+    }
+  } else {
+    $length = 20;
   }
-  var_dump($password);
 
-  function generateRandomPassword($length = 20) {
-    // Caratteri possibili per la password
+  $password = generateRandomPassword($length);
+
+  function generateRandomPassword($length) {
     $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?~@#-_+<>[]{}!$%^&*()';
 
     // Genera una stringa casuale con la lunghezza specificata
     $password = '';
     for ($i = 0; $i < $length; $i++) {
-        $password .= $chars[rand(0, strlen($chars) - 1)];
+      $password .= $chars[rand(0, strlen($chars) - 1)];
     }
 
     return $password;
-
   }
-  $password = generateRandomPassword(20); // Genera una password casuale di 12 caratteri
-  echo $password; // Stampa la password casuale generata
 ?>
 
 <!DOCTYPE html>
@@ -59,60 +59,60 @@
    </div>
   </header>
   <!-- HEADER -->
-  <main>
+  <main class="rounded-2">
     <div class="container ">
-      <div class="row shadow">
+      <div class="row shadow rounded-bottom-3">
         <div class="col-6 d-flex justify-content-start flex-column p-2 text-secondary bg-light  ">
           <div class="mb-5">
-            <p>Lunghezza password:</p>
             <p>consenti ripetizioni di uno o piú caratteri:</p>
           </div>
         </div>
         <!-- SECTION LEFT col-6 -->
 
-        <div class="col-6 d-flex justify-content-start flex-column p-2 text-secondary bg-light ">
-        <form  method="GET" action="">
-            <div class="mb-3">
-              <label for="password"> </label>
-              <input type="text" name="password" id="password" class="form-control w-50 " placeholder="" >
-            </div>
-            <button type="submit" class="btn btn-primary">Invia</button>
-            <button type="reset"class="btn btn-secondary">Annulla</button>
-          <div>
-        </form> 
+        <div class="col-6 d-flex justify-content-start flex-column p-2 text-secondary bg-light  ">
+        <form method="GET" action="">
+          <div class="mb-3">
+            <label for="password" class="p-2">Lunghezza password:</label>
+            <input type="text" name="password" id="password" class="form-control w-50" placeholder="" value="<?php echo $password; ?>">
+          </div>
+          <button type="submit" class="btn btn-primary">Genera password</button>
+          <button type="reset" class="btn btn-secondary">Annulla</button>
+        </form>
           <!-- password -->
           <div class="form-check mt-2">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"checked>
               <label class="form-check-label " for="flexRadioDefault1">
                 Si
               </label>
           </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
               <label class="form-check-label" for="flexRadioDefault2">
                 No
               </label>
             </div>
           </div>
           <!--radio-  -->
-          <div class="form-check mt-2">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-              Lettere
-            </label>
+          <div class="bg-info d-flex flex-column">
+            <div class="form-check mt-2">
+              <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault"checked>
+              <label class="form-check-label" for="flexCheckDefault">
+                Lettere
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+              <label class="form-check-label" for="flexCheckChecked">
+                Numeri
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+              <label class="form-check-label" for="flexCheckChecked">
+               Simboli
+              </label>
+            </div><!-- checkbox -->
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Numeri
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-             Simboli
-            </label>
-          </div><!-- checkbox -->
         </div> <!-- SECTION RIGHTcol-6 -->
       </div>
     </div>   
