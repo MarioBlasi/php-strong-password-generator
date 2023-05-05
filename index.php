@@ -1,5 +1,10 @@
 <?php
-       
+  if(isset($_GET['password'])){
+    $password = $_GET["password"];
+    $length = strlen($password);
+    echo "<h4> $password </h4>";
+    echo "<p> $length </p> ";
+  }
 ?>
 
 <!DOCTYPE html>
@@ -17,11 +22,11 @@
     />
     <!--Script Bootstrap bundle-->
 </head>
-<body class="bg-dark">
+<body class="bg-secondary">
   <header>
     <div class="container pt-5">
      <div class="row ">
-       <div class="col d-flex justify-content-center  p-2 text-secondary">
+       <div class="col d-flex justify-content-center  p-2 text-dark">
          <div class="h1">Storn Password Generator</div>
        </div>
      </div>
@@ -37,29 +42,32 @@
      </div>
    </div>
   </header>
-
+  <!-- HEADER -->
   <main>
-    <div class="container pt-5">
+    <div class="container ">
       <div class="row shadow">
         <div class="col-6 d-flex justify-content-start flex-column p-2 text-secondary bg-light  ">
           <div class="mb-5">
             <p>Lunghezza password:</p>
             <p>consenti ripetizioni di uno o piú caratteri:</p>
-
           </div>
-          <div class=" mt-5">
+          <div class=" mt-5 pt-5">
             <button type="submit" class="btn btn-primary">Invia</button>
             <button type="reset"class="btn btn-secondary">Annulla</button>
           </div>
         </div>
+        <!-- SECTION LEFT col-6 -->
 
         <div class="col-6 d-flex justify-content-start flex-column p-2 text-secondary bg-light ">
+        <form  method="GET" action="">
             <div class="mb-3">
               <label for="password"> </label>
-              <input type="text" name="password" id="password" class="form-control" placeholder="inserisci password" >
+              <input type="text" name="password" id="password" class="form-control" placeholder="" >
             </div>
           <div>
+        </form> 
           <!-- password -->
+
           <div class="form-check">
               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
               <label class="form-check-label" for="flexRadioDefault1">
@@ -91,9 +99,8 @@
             <label class="form-check-label" for="flexCheckChecked">
              Simboli
             </label>
-          </div>
-          <!-- checkbox -->
-        </div>
+          </div><!-- checkbox -->
+        </div> <!-- SECTION RIGHTcol-6 -->
       </div>
     </div>   
   </main>
