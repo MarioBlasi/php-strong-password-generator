@@ -1,5 +1,7 @@
 <?php
-include __DIR__ . '/functions.php';
+
+include __DIR__ . '/header.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -18,20 +20,7 @@ include __DIR__ . '/functions.php';
     <!--Script Bootstrap bundle-->
 </head>
 <body class="bg-muted ">
-  <header class="mt-5">
-    <div class="container pt-3 shadow">
-     <div class="row ">
-       <div class="col d-flex justify-content-center  p-2 text-dark shadow-lg p-3 mb-2 bg-body rounded">
-         <div class="h1"> <em>Stong Password Generator</em> </div>
-       </div>
-     </div>
-     <div class="row">
-       <div class="col d-flex justify-content-center text-secondary p-2 shadow p-3 mb-2 bg-body rounded">
-         <div class="h2">Genera password sicura</div>
-       </div>
-     </div>
-   </div>
-  </header>
+
   <!-- HEADER -->
   <main >
     <div class="container">
@@ -45,14 +34,7 @@ include __DIR__ . '/functions.php';
         <!-- SECTION LEFT col-6 -->
 
         <div class="col-6 d-flex justify-content-start flex-column p-2 text-secondary bg-light  ">
-          <form method="GET">
-            <label for="password-length"><h5 class="pt-5">Inserisci la lunghezza della password: </h5> </label>
-            <input class="btn btn-primary btn-lg "  type="number" type="password" name="password" id="password-length" required min="1" max="100">
-            <div class="w-50 rounded" >
-              <button class="btn btn-secondary mt-2" type="submit">Genera password</button>
-            </div>
-          </form>
-          <p><h5> La tua password casuale è: </h5><b> <h4> <?php echo $password; ?></h4></b></p>
+            <?php include __DIR__ . '/functions.php';?>
             <!-- password -->
             <hr>
             <div class=" d-flex flex-column  mb-2">
@@ -97,6 +79,11 @@ include __DIR__ . '/functions.php';
       </div>
     </div>   
   </main>
+  <?php
+
+include __DIR__ . '/footer.php';
+?>
+
   
 </body>
 </html>
