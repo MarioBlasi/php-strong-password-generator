@@ -1,9 +1,5 @@
 <?php
 
-session_start();
-
-  $_SESSION['password'] = $password;
-
   if (isset($_GET['password'])) {
     $length = intval($_GET['password']);
     if ($length < 1) {
@@ -27,8 +23,6 @@ session_start();
     return $password;
   }
   
-session_unset();
-session_destroy();
 ?>
 
 <form method="GET">
