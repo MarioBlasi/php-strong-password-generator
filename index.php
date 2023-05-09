@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . '/header.php';
+
 
 ?>
 
@@ -21,7 +21,7 @@ include __DIR__ . '/header.php';
 </head>
 <body class="bg-muted ">
 
-  <!-- HEADER -->
+  <?php include __DIR__ . '/header.php';?>
   <main >
     <div class="container">
       <div class="row shadow">
@@ -35,6 +35,7 @@ include __DIR__ . '/header.php';
 
         <div class="col-6 d-flex justify-content-start flex-column p-2 text-secondary bg-light  ">
             <?php include __DIR__ . '/functions.php';?>
+            <?php include __DIR__ . '/generate.php';?>
             <!-- password -->
             <hr>
             <div class=" d-flex flex-column  mb-2">
@@ -79,11 +80,6 @@ include __DIR__ . '/header.php';
       </div>
     </div>   
   </main>
-  <?php
-
-include __DIR__ . '/footer.php';
-?>
-
-  
+  <?php include __DIR__ . '/footer.php';?>
 </body>
 </html>

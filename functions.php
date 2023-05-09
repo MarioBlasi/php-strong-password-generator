@@ -27,9 +27,9 @@
 
 <form method="GET">
     <label for="password-length"><h5 class="pt-5">Inserisci la lunghezza della password: </h5> </label>
-    <input class="btn btn-primary btn-lg "  type="number" type="password" name="password" id="password-length" required min="1" max="99">
+    <input class="btn btn-primary btn-lg w-50 "  type="number" type="password" name="password" id="password-length" required min="8" max="32">
     <div class="w-50 rounded" >
-        <button class="btn btn-secondary mt-2" type="submit">Genera password</button>
+        <button class="btn btn-secondary mt-2 w-75" type="submit">Genera password</button>
     </div>
 </form>
-<p><h5> La tua password casuale è: </h5><b> <h4> <?php echo $password; ?></h4></b></p>
+<p><h5> La tua password casuale è: </h5><b> <h1 class="text-danger "> <?php echo $password; ?></h1></b></p>
